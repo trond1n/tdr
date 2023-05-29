@@ -1,0 +1,39 @@
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(21, 208, 161, 0.2);
+  border: 1px solid rgb(147, 249, 224);
+  background-color: rgb(248, 252, 251);
+}
+
+.taskText {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.editButton,
+.deleteButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.editButton:hover,
+.deleteButton:hover {
+  color: #f44336;
+}
