@@ -18,6 +18,11 @@ const TaskList = () => {
     setTasks(updatedTasks);
   };
 
+  const deleteTask = (taskId) => {
+    const updatedTasks = tasks.filter(task => task.id !== taskId);
+    setTasks(updatedTasks);
+  };
+
   const Task = ({ task, index }) => {
     const [{ isDragging }, drag] = useDrag({
       type: 'task',
@@ -42,6 +47,10 @@ const TaskList = () => {
 
     const opacity = isDragging ? 0.5 : 1;
 
+    const handleDelete = () => {
+      deleteTask(task.id);
+    };
+
     return (
       <div ref={node => drag(drop(node))} style={{ opacity }} className={styles.task}>
         <div className={styles.taskText}>
@@ -49,7 +58,7 @@ const TaskList = () => {
         </div>
         <div className={styles.buttons}>
           <button className={styles.editButton}>✏️</button>
-          <button className={styles.deleteButton}>🗑️</button>
+          <button className={styles.deleteButton} onClick={handleDelete}>🗑️</button>
         </div>
       </div>
     );
