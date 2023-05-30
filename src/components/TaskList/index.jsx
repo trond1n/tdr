@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import styles from './TaskList.module.css';
 
-const TaskList = () => {
-  const [tasks, setTasks] = useState([
-    { id: 'task1', text: 'Покормить кота', emoji: '🐱' },
-    { id: 'task2', text: 'Приготовить обед', emoji: '🍳' },
-    { id: 'task3', text: 'Погулять в парке', emoji: '🌳' },
-  ]);
+const TaskList = ({tasks, setTasks}) => {
+ 
 
   const moveTask = (dragIndex, hoverIndex) => {
     const draggedTask = tasks[dragIndex];

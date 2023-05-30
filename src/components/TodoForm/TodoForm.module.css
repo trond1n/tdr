@@ -1,36 +1,32 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease;
-    margin-bottom: 10px;
-    width: 50%;
-  }
-  
-  .input:focus {
-    outline: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  
-  .button {
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #45a049;
-  }
-  
+.formContainer {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.todoInput {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 16px;
+  width: 300px;
+  background-color: #f6f6f6;
+  -webkit-box-shadow: 1px 0px 18px 7px rgba(255, 255, 255, 0.2);
+  -moz-box-shadow: 1px 0px 18px 7px rgba(255, 255, 255, 0.2);
+  box-shadow: 1px 0px 18px 7px rgba(255, 255, 255, 0.2);
+}
+
+.addButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #61dafb;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: #42a5f5;
+}

@@ -1,12 +1,35 @@
-import React from 'react'
-import styles from './TodoForm.module.css'
-const TodoForm = () => {
+import React, { useState } from 'react';
+import styles from './TodoForm.module.css';
+
+const TodoForm = ({ addTask }) => {
+  const [newTask, setNewTask] = useState('');
+
+  const handleInputChange = (event) => {
+    setNewTask(event.target.value);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    if (newTask.trim() === '') {
+      return;
+    }
+    addTask(newTask.trim());
+    setNewTask('');
+  };
+
   return (
-    <div className={styles.container}>
-      <h1>Введите задачу</h1>
-    <input type="text" className={styles.input} placeholder="Enter a task" />
-    <button className={styles.button}>Добавить задачу</button>
-  </div>
-  )
-}
-export default TodoForm
+    <form className={styles.formContainer} onSubmit={handleFormSubmit}>
+      <input
+        className={styles.todoInput}
+        type="text"
+        value={newTask}
+        onChange={handleInputChange}
+      />
+      <button className={styles.addButton} type="submit">
+        Добавить задачу
+      </button>
+    </form>
+  );
+};
+
+export default TodoForm;
